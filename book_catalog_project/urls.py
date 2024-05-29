@@ -15,8 +15,27 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.urls import path, include 
+from rest_framework import routers
+
+from rest_framework_simplejwt.views import TokenObtainPairView
+
+from django.contrib import admin
 from django.urls import path
+from book_catalog_app.views import *
+
+router = routers.DefaultRouter()
+router.register(r'genres', BookGenreViewSet)
+router.register(r'books', BookViewSet)
+router.register(r'author', AuthorViewSet)
+router.register(r'rating', RatingViewSet)
+router.register(r'review', ReviewViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('profile/', get_profile),
+    path('', include(router.urls)),
+    path('token/', TokenObtainPairView.as_view()),
+    path('create-user', create_user),
 ]
+

@@ -34,6 +34,8 @@ class Profile (models.Model):
    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
    first_name = models.TextField()
    last_name = models.TextField()
+   favorites_list = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='favorites', null=True)
+   to_be_read = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='tbr', null=True)
 
    def __str__(self):
        return self.user.username
