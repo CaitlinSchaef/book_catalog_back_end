@@ -31,6 +31,15 @@ class ReviewViewSet(viewsets.ModelViewSet):
    queryset = Review.objects.all()
    serializer_class = ReviewSerializer
 
+class FavoriteViewSet(viewsets.ModelViewSet):
+   queryset = Favorite.objects.all()
+   serializer_class = FavoriteSerializer
+
+class TbrViewSet(viewsets.ModelViewSet):
+   queryset = Tbr.objects.all()
+   serializer_class = TbrSerializer
+
+
 # Because I put 'IsAuthenticated' in this get, only the superuser can access stuff, so you need to log in to get your token
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -59,3 +68,4 @@ def create_user(request):
    profile_serialized = ProfileSerializer(profile)
    return Response(profile_serialized.data)
    
+

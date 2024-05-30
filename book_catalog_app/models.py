@@ -30,15 +30,21 @@ class Rating(models.Model):
     def __str__(self):
        return self.star
 
-class Profile (models.Model):
+class Profile(models.Model):
    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
    first_name = models.TextField()
    last_name = models.TextField()
-   favorites_list = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='favorites', null=True)
-   to_be_read = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='tbr', null=True)
 
    def __str__(self):
        return self.user.username
+
+class Favorite(models.Model):
+    user_name = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, null=True)
+
+class Tbr(models.Model):
+    user_name = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, null=True)
    
 class Review(models.Model):
     book = models.ForeignKey(Book, on_delete=models.SET_NULL, null=True)

@@ -35,3 +35,13 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = ['book', 'stars', 'review_body', 'reviewer_name']
+
+class FavoriteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Favorite
+        fields = ['user_name', 'book']
+
+class TbrSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tbr
+        fields = ['user_name', 'book']

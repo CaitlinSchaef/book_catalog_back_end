@@ -30,6 +30,8 @@ router.register(r'books', BookViewSet)
 router.register(r'author', AuthorViewSet)
 router.register(r'rating', RatingViewSet)
 router.register(r'review', ReviewViewSet)
+router.register(r'favorites', FavoriteViewSet)
+router.register(r'tbr', TbrViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
