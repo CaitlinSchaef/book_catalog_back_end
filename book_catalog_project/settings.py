@@ -35,7 +35,6 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'a default-value for local dev')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['book-catalog-back-end.fly.dev']
 
 
 # Application definition
@@ -74,7 +73,7 @@ STORAGES = {
 }
 
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:5173', 'https://book-catalog-react.vercel.app']
+CORS_ALLOWED_ORIGINS = ['http://localhost:5173', 'https://book-catalog-react.vercel.app', 'https://book-catalog-back-end.fly.dev']
 
 
 CORS_ALLOW_METHODS = [
