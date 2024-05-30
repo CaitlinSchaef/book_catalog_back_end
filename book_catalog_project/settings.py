@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'app_auth',
     'book_catalog_app',
     'rest_framework_simplejwt.token_blacklist',
 ]
@@ -57,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:8080', 'https://book-catalog-react.vercel.app/']
+CORS_ALLOWED_ORIGINS = ['http://localhost:8080', 'https://book-catalog-react.vercel.app']
 
 
 CORS_ALLOW_METHODS = [
