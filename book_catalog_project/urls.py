@@ -33,6 +33,7 @@ router.register(r'review', ReviewViewSet)
 router.register(r'favorites', FavoriteViewSet)
 router.register(r'tbr', TbrViewSet)
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('profile/', get_profile),
