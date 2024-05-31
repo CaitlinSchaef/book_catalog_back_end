@@ -38,6 +38,6 @@ urlpatterns = [
     path('profile/', get_profile),
     path('', include(router.urls)),
     path('token/', TokenObtainPairView.as_view()),
-    path('create_user', create_user),
+    path('create_user/', create_user),
 ]
 
