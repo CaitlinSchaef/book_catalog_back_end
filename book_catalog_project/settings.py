@@ -178,6 +178,8 @@ REST_FRAMEWORK = {
    ]
 }
 
+CSRF_TRUSTED_ORIGINS = [f"https://{APP_NAME}.fly.dev"]
+
 
 SIMPLE_JWT = {
    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=120),
